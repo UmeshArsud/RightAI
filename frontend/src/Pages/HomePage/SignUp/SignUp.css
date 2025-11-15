@@ -1,0 +1,116 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.sign-page {
+    height: 100%;
+    /* height: 100vh; */
+    width: 100%;
+    margin-top: 3%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.signup-form{
+    width: 340px;
+    height: auto;
+    background-color: aqua;
+    margin: auto;    
+    /* display: flex;
+    flex-wrap: wrap; */
+    border-radius: 14px;
+}
+.heading{
+    font-size: 4vh;
+    text-align: center;
+    margin: 1rem;
+}
+.name-token {
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+
+}
+.token {
+    font-size: 17px;
+    font-weight: 300;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 0%;
+}
+.full-name {
+    font-weight: 550;
+    font-size: 17px;
+    margin-left: 17px;
+    margin-top: 2rem;
+
+}
+
+.lable {
+    font-size: 17px;
+    font-weight: 550;
+    margin-left: 17px;
+    margin-top: 14px;
+}
+.name-input {
+    height: 24px;
+    width: 140px;
+    font-size: 15px;
+    margin-left: 10px;
+    padding-left: 7px;
+    border-radius: 8px;
+}
+.input {
+    height: 24px;
+    width: 300px;
+    font-size: 15px;
+    margin-left: 10px;
+    padding-left: 7px;
+    border-radius: 8px;
+}
+.signup-button {
+    height: 30px;
+    width: 150px;
+    border-radius: 10PX;
+    margin: auto;
+    margin-left: 90px;
+    margin-top: 20px;
+
+}
+.signup-button:hover {
+    cursor: pointer;
+    background-color: rgb(206, 206, 206);
+}
+.sign-in-bt {
+    height: 18px;
+    width: 80px;
+    font-size: 14px;
+    margin-top: 5px;
+    margin-bottom: 3px;
+    margin-left: 250px;
+    padding: 1px;
+    color: blue;
+    text-align: center;
+    display: inline-block;
+    background-color: aqua;
+    border-radius: 50px ;
+}
+.sign-up-back-home {
+    color: black;
+    text-decoration: none;
+    font-size: 14px;
+    margin-top: 50px;
+    margin-left: 245px;
+}
+.sign-in-bt:hover {
+    cursor: pointer;
+}
+.error-text {
+    font-size: 15px;
+    margin-left: 15px;
+    color: rgb(237, 65, 65);
+}

@@ -1,0 +1,109 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0px;
+    margin: 0px;
+    border-radius: border-box;
+}
+.sign-in-page {
+    height: 100%;
+    width: 100%;
+    margin-top: 3%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.sign-in-form{
+    width: 340px;
+    height: auto;
+    background-color: aqua;
+    margin: auto;    
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 14px;
+}
+.sign-in-heading{
+    font-size: 4vh;
+    text-align: center;
+    margin: 1rem;
+}
+.sign-in-token {
+    font-size: 17px;
+    font-weight: 300;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 0%;
+}
+.sign-in-lable {
+    font-size: 17px;
+    font-weight: 550;
+    margin-left: 17px;
+    margin-top: 14px;
+}
+.input {
+    height: 24px;
+    width: 300px;
+    font-size: 15px;
+    margin-left: 10px;
+    padding-left: 7px;
+    border-radius: 8px;
+}
+.sign-in-button {
+    height: 30px;
+    width: 150px;
+    border-radius: 10PX;
+    margin: auto;
+    margin-left: 90px;
+    margin-top: 20px;
+
+}
+.sign-in-button:hover {
+    cursor: pointer;
+    background-color: rgb(206, 206, 206);
+}
+.sign-up-bt {
+    height: 18px;
+    width: 100px;
+    font-size: 14px;
+    margin-top: 15px;
+    margin-left: 225px;
+    padding: 1px;
+    color: blue;
+    text-align: center;
+    display: inline-block;
+    border-radius: 50px ;
+}
+.sign-up-bt:hover {
+    cursor: pointer;
+}
+.sign-in-back-home {
+    color: black;
+    text-decoration: none;
+    font-size: 14px;
+    margin-left: 230px;
+    margin-top: 4px;
+    margin-bottom: 5px;
+}
+.sign-in-error-text {
+    font-size: 15px;
+    margin-left: 15px;
+    color: rgb(237, 65, 65);
+}
+.forget-pass {
+    height: 15px;
+    width: 120px;
+    font-size: 14px;
+    margin-top: 18px;
+    margin-left: 2px;
+    padding: 1px;
+    color: blue;
+    text-align: center;
+    background-color: aqua;
+    display: inline-block;
+    border-radius: 50px ;
+
+}
+.forget-pass:hover {
+    cursor: pointer;
+
+}
