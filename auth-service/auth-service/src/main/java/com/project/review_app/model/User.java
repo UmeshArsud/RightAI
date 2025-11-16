@@ -9,12 +9,12 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data // Lombok: Creates getters, setters, toString, etc.
-@Builder // Lombok: Implements the builder pattern
-@NoArgsConstructor // Lombok: Creates a no-args constructor
-@AllArgsConstructor // Lombok: Creates an all-args constructor
+@Data // Lombok:- Creates getters, setters, toString, etc.
+@Builder // Lombok:- Implements the builder pattern
+@NoArgsConstructor // Lombok:- Creates a no-args constructor
+@AllArgsConstructor // Lombok:- Creates an all-args constructor
 @Entity
-@Table(name = "users") // Name of the table in the database
+@Table(name = "users")
 public class User {
 
     @Id
@@ -46,6 +46,6 @@ public class User {
 
     @NotBlank
     @Size(max = 120)
-    private String password; // This will be the *hashed* password
+    private String password; //hash
 
 }

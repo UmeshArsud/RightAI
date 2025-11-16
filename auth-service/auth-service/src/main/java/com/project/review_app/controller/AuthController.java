@@ -30,11 +30,8 @@ public class AuthController {
         }
     }
 
-    // --- UPDATE THIS METHOD ---
     @PostMapping("/signin")
     public ResponseEntity<?> authenticateUser(@Valid @RequestBody SignInRequest signInRequest) {
-        // The service now handles all auth logic and returns the response
-        // We can add try/catch here for bad credentials later if we want
         SignInResponse signInResponse = authService.authenticateUser(signInRequest);
         return ResponseEntity.ok(signInResponse);
     }

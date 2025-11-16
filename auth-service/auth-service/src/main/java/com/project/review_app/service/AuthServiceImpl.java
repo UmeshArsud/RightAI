@@ -34,7 +34,6 @@ public class AuthServiceImpl implements AuthService {
 
     @Override
     public void registerUser(SignUpRequest signUpRequest) {
-        // ... (existing registerUser logic)
         if (userRepository.existsByUsername(signUpRequest.getUsername())) {
             throw new RuntimeException("Error: Username is already taken!");
         }
@@ -57,23 +56,18 @@ public class AuthServiceImpl implements AuthService {
         userRepository.save(user);
     }
 
-    // Add this new method
     @Override
     public SignInResponse authenticateUser(SignInRequest signInRequest) {
-        // 1. Authenticate user with Spring Security
+        // Authenticate user with Spring Security
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(signInRequest.getUsername(), signInRequest.getPassword()));
+                SecurityContextHolder.getContext().setAuthentication(authentication);
+                String jwt = jwtUtils.generateJwtToken(authentication);
 
-        // 2. Set authentication in the SecurityContext
-        SecurityContextHolder.getContext().setAuthentication(authentication);
-
-        // 3. Generate the JWT
-        String jwt = jwtUtils.generateJwtToken(authentication);
-
-        // 4. Get UserDetails from the authentication object
+        // Getting UserDetails from the authentication object
         UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
 
-        // 5. Return the response DTO
+        //from here Return the response DTO  // :- greeters and setters lombok banaun deto
         return new SignInResponse(
                 jwt,
                 userDetails.getId(),

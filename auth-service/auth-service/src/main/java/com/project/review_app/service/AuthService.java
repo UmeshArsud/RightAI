@@ -7,6 +7,5 @@ import com.project.review_app.dto.SignUpRequest;
 public interface AuthService {
     void registerUser(SignUpRequest signUpRequest);
 
-    // Add this new method
     SignInResponse authenticateUser(SignInRequest signInRequest);
 }

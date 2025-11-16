@@ -1,7 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
-// 1. Define the shape of the data we get from the Spring Boot API
-// This must match your SignInResponse.java DTO
+//must match to SignInResponse.java DTO
 interface UserData {
   token: string;
   type: string;
@@ -10,15 +9,13 @@ interface UserData {
   email: string;
 }
 
-// 2. Define the shape of the Auth Context
 interface AuthContextType {
-  userData: UserData | null; // User data (or null if not logged in)
-  login: (data: UserData) => void; // Function to log in
-  logout: () => void; // Function to log out
+  userData: UserData | null;
+  login: (data: UserData) => void; //function
+  logout: () => void; //function
 }
 
-// 3. Create the Context
-// We add "!" to tell TypeScript we'll provide a value later
+// We add "!" to tell TypeScript, provide a value later
 const AuthContext = createContext<AuthContextType>(null!);
 
 // 4. Create a custom hook "useAuth()" to easily access the context

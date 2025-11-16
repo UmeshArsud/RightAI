@@ -53,7 +53,7 @@ public class SecurityConfig {
         return authProvider;
     }
 
-    // This bean is used by our AuthController to manually authenticate the user
+    // This bean is used by AuthController to manually authenticate the user
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration authConfig) throws Exception {
         return authConfig.getAuthenticationManager();
@@ -86,18 +86,17 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         // Allow our public endpoints
                         .requestMatchers("/api/auth/**").permitAll()
-                        .requestMatchers("/h2-console/**").permitAll() // Keep this for MySQL console if you use one
+                        .requestMatchers("/h2-console/**").permitAll()
                         // All other requests must be authenticated
                         .anyRequest().authenticated()
                 );
 
-        // Add our custom authentication provider
+        // custom authentication provider
         http.authenticationProvider(authenticationProvider());
 
-        // Add our custom JWT filter *before* the default username/password filter
+        // custom JWT filter *before* the default username/password filter
         http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
 
-        // For H2 console (can be removed if not needed)
         http.headers(headers -> headers.frameOptions(frameOptions -> frameOptions.sameOrigin()));
 
         return http.build();

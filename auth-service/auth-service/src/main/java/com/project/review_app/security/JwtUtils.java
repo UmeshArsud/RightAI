@@ -15,7 +15,7 @@ import java.util.Date;
 public class JwtUtils {
     private static final Logger logger = LoggerFactory.getLogger(JwtUtils.class);
 
-    // 1. Generate a strong secret key (run this in a main method once and copy the Base64 string)
+    // Generate a strong secret key (run this in a main method once and copy the Base64 string)
     // SecretKey key = Keys.secretKeyFor(SignatureAlgorithm.HS512);
     // String base64Key = Encoders.BASE64.encode(key.getEncoded());
     // System.out.println(base64Key);
@@ -32,7 +32,6 @@ public class JwtUtils {
         this.key = Keys.hmacShaKeyFor(jwtSecret.getBytes());
     }
 
-    // Create a JWT from user authentication
     public String generateJwtToken(Authentication authentication) {
         UserDetailsImpl userPrincipal = (UserDetailsImpl) authentication.getPrincipal();
 
@@ -44,13 +43,11 @@ public class JwtUtils {
                 .compact();
     }
 
-    // Get username from a JWT
     public String getUserNameFromJwtToken(String token) {
         return Jwts.parserBuilder().setSigningKey(key).build()
                 .parseClaimsJws(token).getBody().getSubject();
     }
 
-    // Validate a JWT
     public boolean validateJwtToken(String authToken) {
         try {
             Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(authToken);

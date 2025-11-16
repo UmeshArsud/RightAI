@@ -18,7 +18,6 @@ public class UserDetailsImpl implements UserDetails {
     @JsonIgnore
     private final String password;
 
-    // We can add authorities (roles) later
     // private final Collection<? extends GrantedAuthority> authorities;
 
     public UserDetailsImpl(Long id, String username, String email, String password) {
@@ -63,7 +62,7 @@ public class UserDetailsImpl implements UserDetails {
         return username;
     }
 
-    // Account status logic (for now, everyone is active)
+    // Account status logic :--> (for now, everyone is active)
     @Override
     public boolean isAccountNonExpired() {
         return true;
